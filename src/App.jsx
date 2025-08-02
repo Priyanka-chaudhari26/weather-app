@@ -35,7 +35,7 @@ function App() {
     //     <MainApp weatherData={weatherData} onSearch={fetchWeather}/>
     //   ) : (
     //     <div className="initial-screen">
-    //       <h1>🌤 Weather App</h1>
+    //       <h1>Weather App</h1>
     //       {/* <SearchBar
     //         onWeatherFetched={setWeatherData}
     //         onError={setError}
@@ -47,7 +47,7 @@ function App() {
     <div className="app-container">
       {weatherData && (
       <header className="navbar">
-        <h1 className="app-title">🌤 Weather App</h1>
+        <h1 className="app-title">Weather App</h1>
         <SearchBar
           onWeatherFetched={setWeatherData}
           onForecastFetched={setForecastData} 
