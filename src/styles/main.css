@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: row;
-  gap:15rem;
+  gap: 15rem;
   margin: 5rem auto;
   height: 40vh;
   /* background: #1e1e1e; */
@@ -34,8 +34,8 @@
   align-items: center;
   margin-bottom: 2rem;
   /* padding: 20px; */
-    position: relative;  
-    height: auto;
+  position: relative;
+  height: auto;
   flex-wrap: wrap;
 }
 
@@ -43,7 +43,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px; 
+  margin-bottom: 30px;
 }
 
 .search-bar input {

@@ -1,8 +1,7 @@
-import { useState } from 'react'
-import "../styles/SearchBar.css"
+import { useState } from "react";
+import "../styles/SearchBar.css";
 
-
-function SearchBar({ onWeatherFetched,onForecastFetched, onError }) {
+function SearchBar({ onWeatherFetched, onForecastFetched, onError }) {
   const [city, setCity] = useState("");
   const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -21,26 +20,26 @@ function SearchBar({ onWeatherFetched,onForecastFetched, onError }) {
       if (!weatherResponse.ok) {
         throw new Error("City not found");
       }
-      const weatherData  = await weatherResponse.json();
-      console.log("weatherData",weatherData)
+      const weatherData = await weatherResponse.json();
+      console.log("weatherData", weatherData);
 
       const forecastResponse = await fetch(
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
       );
-      
+
       if (!forecastResponse.ok) {
         throw new Error("Forecast not available");
       }
       const forecastData = await forecastResponse.json();
-      console.log("forecast",forecastData)
+      console.log("forecast", forecastData);
 
-      onWeatherFetched(weatherData );   
-      onForecastFetched(forecastData); 
-      onError("");              
+      onWeatherFetched(weatherData);
+      onForecastFetched(forecastData);
+      onError("");
     } catch (err) {
-      onError(err.message);     
-      onWeatherFetched(null);   
-      onForecastFetched([]);  
+      onError(err.message);
+      onWeatherFetched(null);
+      onForecastFetched([]);
     }
   };
 
@@ -52,13 +51,8 @@ function SearchBar({ onWeatherFetched,onForecastFetched, onError }) {
         value={city}
         onChange={(e) => setCity(e.target.value)}
         placeholder="Enter city name"
-        
       />
-      <button
-      className="search-button"
-        onClick={fetchWeather}
-        
-      >
+      <button className="search-button" onClick={fetchWeather}>
         Get Weather
       </button>
     </div>

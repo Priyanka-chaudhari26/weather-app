@@ -3,9 +3,14 @@ import WeatherHub from "./WeatherHub";
 import SearchBar from "./SearchBar";
 import "../styles/main.css";
 
-function MainApp({ weatherData, onSearch, searchValue, onInputChange, onWeatherFetched, onError}) {
-
-  
+function MainApp({
+  weatherData,
+  onSearch,
+  searchValue,
+  onInputChange,
+  onWeatherFetched,
+  onError,
+}) {
   const [currentTime, setCurrentTime] = useState(new Date());
   useEffect(() => {
     const timer = setInterval(() => {
@@ -24,17 +29,19 @@ function MainApp({ weatherData, onSearch, searchValue, onInputChange, onWeatherF
   };
 
   const formatTime = (date) => {
-    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+    return date.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
   };
 
   return (
     <div className="weather-container">
-   
       <div className="left-panel">
-        
         <div className="date-time">
           <h2>{formatDate(currentTime)}</h2>
-          
+
           <h1 className="live-clock">{formatTime(currentTime)}</h1>
           <img
             src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
@@ -43,10 +50,8 @@ function MainApp({ weatherData, onSearch, searchValue, onInputChange, onWeatherF
           />
           <p className="condition">{weatherData.weather[0].main}</p>
         </div>
-        
       </div>
 
-   
       <div className="right-panel">
         <WeatherHub weatherData={weatherData} />
       </div>
