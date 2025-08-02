@@ -1,4 +1,5 @@
 import "../styles/ForecastHourly.css"
+import { WindIcon} from "@phosphor-icons/react"
 function ForecastHourly({ forecastData  }) {
     if (!forecastData || !forecastData.list) return null;
 
@@ -22,7 +23,7 @@ function ForecastHourly({ forecastData  }) {
               className="hourly-icon"
             />
             <p className="hourly-temp">{Math.round(hour.main.temp)}°C</p>
-            <p className="hourly-wind">💨 {hour.wind.speed} m/s</p>
+            <p className="hourly-wind"><WindIcon size={28} color="#e1e0e0" weight="fill" />{hour.wind.speed} m/s</p>
           </div>
         ))}
       </div>

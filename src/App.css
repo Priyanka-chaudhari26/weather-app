@@ -6,135 +6,25 @@
  
 #root {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  justify-content: flex-start; /* Vertical center */
-  align-items: center;     /* Horizontal center */
-  min-height: 100vh;       /* Full height of viewport */
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center;     
+  min-height: 100vh;       
   background: #1e1e1e;     
   color: white;
   margin: auto;
-  width: 100%;        /* 👈 Take full width */
-  max-width: none;    /* 👈 Remove any constraints */
-  margin: 0;          /* 👈 Reset margin */
+  width: 100%;       
+  max-width: none;    
+  margin: 0;          
   padding: 20px 0;  
   background-color: #242424;
 }
-
-
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-} */
-
-/* @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-} */
-/* 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
-/* .search-bar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-}
-
-.search-bar input {
-  padding: 10px;
-  width: 250px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
-.search-bar button {
-  padding: 10px 15px;
-  margin-left: 10px;
-  background-color: #4facfe;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.search-bar button:hover {
-  background-color: #00c6ff;
-}
-.app-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #1e1e1e;
-  color: white;
-}
-
-.initial-screen {
-  text-align: center;
-}
-
-.initial-screen h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.initial-screen .search-bar {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.initial-screen .search-bar input {
-  padding: 10px;
-  width: 250px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
-.initial-screen .search-bar button {
-  padding: 10px 15px;
-  margin-left: 10px;
-  background-color: #4facfe;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.initial-screen .search-bar button:hover {
-  background-color: #00c6ff;
-} */
 .search-bar-wrapper {
   display: flex;
-  justify-content: center; /* Center the bar horizontally */
-  align-items: center;     /* Align input & button vertically */
-  gap: 10px;               /* Space between input and button */
-  margin-bottom: 20px;     /* Space below search bar */
+  justify-content: center; 
+  align-items: center;     
+  gap: 10px;               
+  margin-bottom: 20px;     
 }
 
 .search-input {
@@ -178,8 +68,7 @@
 
 /* Main Content */
 .app-container {
-  /* background-color: #121212; */
-  /* min-height: 100vh; */
+ 
   height: 100%;
   width: 100%;
   color: #fff;
@@ -195,8 +84,12 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 7rem;
-  gap:  8rem; 
+  margin-top: 2rem;
+  gap: 4rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  z-index: 1;
+  /* gap:  8rem;  */
   flex-wrap: wrap; /* stack vertically on small screens */
 }
 
@@ -205,5 +98,23 @@
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .forecast-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .navbar h1{
+    align-items: center;
+    margin: 0.5rem auto;
+  }
+
+  .main-content, .right-panel { 
+    width: 100% !important;
+  }
+  .weather-data{
+    display: flex;
+    flex-direction: column;
+    /* gap:1rem; */
+   
   }
 }

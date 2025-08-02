@@ -40,3 +40,9 @@
 .forecast-item:hover {
   transform: scale(1.05);
 }
+@media (max-width: 768px) {
+  .forecast-panel {
+    margin-left: 0;
+    max-width: 340px;
+  }
+}

@@ -5,7 +5,7 @@ import "../styles/main.css";
 
 function MainApp({ weatherData, onSearch, searchValue, onInputChange, onWeatherFetched, onError}) {
 
-  // const now = new Date();
+  
   const [currentTime, setCurrentTime] = useState(new Date());
   useEffect(() => {
     const timer = setInterval(() => {
@@ -29,24 +29,12 @@ function MainApp({ weatherData, onSearch, searchValue, onInputChange, onWeatherF
 
   return (
     <div className="weather-container">
-      {/* LEFT PANEL */}
+   
       <div className="left-panel">
-        {/* <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Enter city"
-            value={searchValue}
-            onChange={onInputChange}
-          />
-          <button onClick={onSearch}>Get Weather</button>
-        </div> */}
-        {/* <SearchBar
-          onWeatherFetched={onWeatherFetched}
-          onError={onError}
-        /> */}
+        
         <div className="date-time">
           <h2>{formatDate(currentTime)}</h2>
-          {/* <p>{formatTime(now)}</p> */}
+          
           <h1 className="live-clock">{formatTime(currentTime)}</h1>
           <img
             src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
@@ -58,7 +46,7 @@ function MainApp({ weatherData, onSearch, searchValue, onInputChange, onWeatherF
         
       </div>
 
-      {/* RIGHT PANEL */}
+   
       <div className="right-panel">
         <WeatherHub weatherData={weatherData} />
       </div>

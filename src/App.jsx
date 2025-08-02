@@ -7,6 +7,7 @@ import MainApp from "./components/MainApp";
 import './App.css'
 import Forecast5Day from './components/Forecast5Day';
 import ForecastHourly from './components/ForecastHourly';
+import { CloudSunIcon} from "@phosphor-icons/react"
 
 function App() {
   const [city, setCity] = useState("");
@@ -16,38 +17,11 @@ function App() {
 
  
   return (
-    // <div style={{ textAlign: "center", marginTop: "50px" }}>
-    //   <h1>🌤 Weather App</h1>
-    //   {/* <SearchBar city={city} setCity={setCity} fetchWeather={fetchWeather} />
-    //   {error && <p style={{ color: "red" }}>{error}</p>}
-    //   {weatherData && <WeatherHub weatherData={weatherData} />} */}
-    //   <SearchBar
-    //     onWeatherFetched={setWeatherData}
-    //     onError={setError}
-    //   />
-      
-    //   {error && <p style={{ color: "red" }}>{error}</p>}
-    //   {weatherData && <WeatherHub weatherData={weatherData} />}
-
-    // </div>
-    // <div className="app-container">
-    //   {weatherData ? (
-    //     <MainApp weatherData={weatherData} onSearch={fetchWeather}/>
-    //   ) : (
-    //     <div className="initial-screen">
-    //       <h1>Weather App</h1>
-    //       {/* <SearchBar
-    //         onWeatherFetched={setWeatherData}
-    //         onError={setError}
-    //       /> */}
-    //       {error && <p style={{ color: "red" }}>{error}</p>}
-    //     </div>
-    //   )}
-    // </div>
+    
     <div className="app-container">
       {weatherData && (
       <header className="navbar">
-        <h1 className="app-title">Weather App</h1>
+        <h1 className="app-title"><CloudSunIcon size={42} color="#f2eded" weight="duotone"/> Weather App</h1>
         <SearchBar
           onWeatherFetched={setWeatherData}
           onForecastFetched={setForecastData} 
@@ -57,7 +31,7 @@ function App() {
        )}
       {/* If weather data is loaded, show MainApp */}
       {weatherData ? (
-        <>        
+        <div className='weather-data'>        
           <MainApp
             weatherData={weatherData}
             onWeatherFetched={setWeatherData}
@@ -71,11 +45,11 @@ function App() {
             </div>
           )}
 
-        </>
+        </div>
 
       ) : (
         <div className="initial-screen">
-          <h1>🌤 Weather App</h1>
+          <h1><CloudSunIcon size={42} color="#f2eded" weight="fill"/> Weather App</h1>
           {/* Show SearchBar on initial screen */}
           <SearchBar
             onWeatherFetched={setWeatherData}

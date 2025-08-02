@@ -5,16 +5,16 @@ function Forecast5Day({ forecastData }) {
 
   const dailyData = {};
 
-  // Group readings by date
+  
   forecastData.list.forEach((reading) => {
-    const date = reading.dt_txt.split(" ")[0]; // Get YYYY-MM-DD
+    const date = reading.dt_txt.split(" ")[0]; 
     if (!dailyData[date]) {
       dailyData[date] = [];
     }
     dailyData[date].push(reading);
   });
 
-  // Map through each day and calculate min/max
+  
   const dailyForecast = Object.entries(dailyData).map(([date, readings]) => {
     const temps = readings.map((r) => r.main.temp);
     const icons = readings.map((r) => r.weather[0].icon);
@@ -23,7 +23,7 @@ function Forecast5Day({ forecastData }) {
       date,
       temp_min: Math.min(...temps).toFixed(1),
       temp_max: Math.max(...temps).toFixed(1),
-      icon: icons[Math.floor(icons.length / 2)], // pick middle icon
+      icon: icons[Math.floor(icons.length / 2)], 
     };
   });
 

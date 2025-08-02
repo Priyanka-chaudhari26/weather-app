@@ -32,15 +32,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
   /* padding: 20px; */
+    position: relative;  
+    height: auto;
+  flex-wrap: wrap;
 }
 
 .search-bar {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px; /* Space between search bar & time */
-  gap: 10px;
+  margin-bottom: 30px; 
 }
 
 .search-bar input {
@@ -95,9 +98,19 @@
 @media (max-width: 768px) {
   .weather-container {
     flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+    height: auto;
   }
+
   .left-panel,
   .right-panel {
     width: 100%;
+    margin: 0 auto;
+  }
+
+  .left-panel {
+    align-items: center;
+    text-align: center;
   }
 }
